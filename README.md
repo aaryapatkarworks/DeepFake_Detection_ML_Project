@@ -1,58 +1,13 @@
 DeepReveal – Deepfake Detection System
 
-DeepReveal is an advanced, end-to-end deep learning system designed to detect deepfake images and videos with high accuracy and strong real-world generalization. It combines spatial, frequency-domain, and transformer-based learning into a powerful ensemble framework for robust media authentication.
+DeepReveal is an advanced, end-to-end deep learning system designed to detect deepfake images and videos with high accuracy and strong cross-dataset generalization. With the rapid rise of generative AI, synthetic media has become increasingly realistic and accessible, posing serious risks to digital trust, cybersecurity, and information integrity. DeepReveal addresses this challenge by combining multiple learning paradigms into a unified, robust detection framework.
 
-Built with a modular and scalable architecture, DeepReveal integrates state-of-the-art models, real-time inference capabilities, and an interactive user interface for practical deployment.
+At its core, the system leverages an ensemble of complementary neural networks to capture diverse feature representations. It integrates spatial feature extraction using Xception, semantic understanding via EfficientNet-B4, and frequency-domain analysis through a specialized FFT-based network. This combination enables the model to detect both visible inconsistencies and subtle spectral artifacts that are often missed by conventional approaches.
 
-Key Features
-🎯 High Accuracy
-Achieves AUC scores of:
-0.997 on FaceForensics++
-0.965 on Celeb-DF v2
-0.931 on WildDeepfake
-🧠 Ensemble Learning Framework
-Combines:
-Xception (spatial features)
-EfficientNet-B4 (semantic features)
-Frequency-based network (spectral artifacts)
-⚡ Real-Time Performance
-Runs at ~80 FPS on RTX 4070 with optimized inference pipeline
-🌐 Full-Stack Implementation
-Backend: FastAPI
-Frontend: Streamlit
-Deep Learning: PyTorch
-🔬 Frequency Domain Analysis
-Detects subtle artifacts invisible in pixel space
-📊 Cross-Dataset Generalization
-Performs consistently across multiple datasets and manipulation techniques
-🧩 Modular Architecture
-Easily extendable for research, deployment, and experimentation
-🏗️ System Workflow
-Data Ingestion (Image/Video input)
-Face Detection & Alignment (MTCNN)
-Feature Extraction (Multi-model pipeline)
-Ensemble Fusion (Adaptive weighting)
-Temporal Aggregation (for videos)
-Prediction + Explainability
-🛠️ Tech Stack
-Languages: Python
-Frameworks: PyTorch, FastAPI, Streamlit
-Tools: Docker, TorchServe
-Concepts:
-Computer Vision
-Deep Learning
-Frequency Analysis (FFT)
-Ensemble Learning
-📦 Applications
-Deepfake detection & media verification
-Cybersecurity & fraud prevention
-Digital forensics
-Social media content moderation
-🔮 Future Scope
-Multi-modal detection (audio + video)
-Real-time streaming analysis
-Federated learning integration
-Transformer-based advanced architectures
-📌 About
+The architecture follows a modular pipeline consisting of data ingestion, face detection and alignment (MTCNN), multi-model feature extraction, adaptive ensemble fusion, and temporal aggregation for video inputs. This design ensures scalability, flexibility, and ease of extension for future research or deployment scenarios.
 
-DeepReveal addresses one of the most critical challenges in modern AI — identifying synthetic media in an era of rapidly evolving generative models. It provides a scalable, accurate, and practical solution for ensuring trust in digital content.
+DeepReveal demonstrates strong performance across multiple benchmark datasets, achieving AUC scores of 0.997 on FaceForensics++, 0.965 on Celeb-DF v2, and 0.931 on WildDeepfake. It also maintains real-time inference capabilities, running at approximately 80 FPS on an RTX 4070 GPU, making it suitable for practical applications.
+
+The system is implemented using PyTorch for model development, FastAPI for backend services, and Streamlit for an interactive frontend interface. It supports both image and video inputs, offers explainability features, and is designed for deployment using Docker and scalable cloud infrastructure.
+
+DeepReveal has applications in digital forensics, social media moderation, fraud detection, and media verification. By providing a reliable and efficient solution for identifying manipulated content, it contributes to strengthening trust in digital ecosystems while paving the way for future advancements such as multimodal analysis and federated learning integration.
