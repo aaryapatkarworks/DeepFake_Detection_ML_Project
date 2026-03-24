@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Detection System - AI-Powered Media Verification</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>DeepFake Shield</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}" class="nav-link active">Home</a></li>
+                <li><a href="{{ url_for('upload_page') }}" class="nav-link">Analyze</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-robot"></i>
+                    <span>AI-Powered Detection</span>
+                </div>
+                <h1 class="hero-title">
+                    Detect Deepfakes with 
+                    <span class="gradient-text">Advanced AI</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Protect yourself from manipulated media using our cutting-edge ensemble of CNN, LSTM, and Xception models. 
+                    Get instant, accurate results with detailed confidence scores.
+                </p>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('upload_page') }}" class="btn btn-primary">
+                        <i class="fas fa-upload"></i>
+                        Upload & Analyze
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        See How It Works
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">95.2%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">&lt;3s</div>
+                        <div class="stat-label">Processing</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">AI Models</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="detection-demo">
+                    <div class="demo-image">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <div class="demo-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="demo-result">
+                        <div class="result-indicator real">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Real</span>
+                        </div>
+                        <div class="result-indicator fake">
+                            <i class="fas fa-times-circle"></i>
+                            <span>Fake</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Our multi-model approach ensures maximum accuracy</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Upload Media</h3>
+                        <p>Upload an image or video file for analysis</p>
+                        <div class="step-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>AI Analysis</h3>
+                        <p>Three AI models analyze the content simultaneously</p>
+                        <div class="step-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Get Results</h3>
+                        <p>Receive detailed analysis with confidence scores</p>
+                        <div class="step-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Section -->
+    <section class="models-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our AI Models</h2>
+                <p class="section-subtitle">Three powerful models working together for maximum accuracy</p>
+            </div>
+            <div class="models-grid">
+                <div class="model-card">
+                    <div class="model-header">
+                        <div class="model-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>CNN Model</h3>
+                        <div class="model-accuracy">89.15%</div>
+                    </div>
+                    <p>Convolutional Neural Network for spatial feature extraction and pattern recognition in images.</p>
+                    <div class="model-features">
+                        <span class="feature-tag">EfficientNet Architecture</span>
+                        <span class="feature-tag">224×224 Resolution</span>
+                        <span class="feature-tag">Transfer Learning</span>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <div class="model-header">
+                        <div class="model-icon">
+                            <i class="fas fa-stream"></i>
+                        </div>
+                        <h3>LSTM Model</h3>
+                        <div class="model-accuracy">92.27%</div>
+                    </div>
+                    <p>Long Short-Term Memory network for temporal sequence analysis and frame consistency checking.</p>
+                    <div class="model-features">
+                        <span class="feature-tag">Bidirectional LSTM</span>
+                        <span class="feature-tag">Sequence Analysis</span>
+                        <span class="feature-tag">Temporal Patterns</span>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <div class="model-header">
+                        <div class="model-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Xception Model</h3>
+                        <div class="model-accuracy">94.96%</div>
+                    </div>
+                    <p>Extreme Inception architecture optimized for deepfake detection with advanced feature extraction.</p>
+                    <div class="model-features">
+                        <span class="feature-tag">Xception Architecture</span>
+                        <span class="feature-tag">299×299 Resolution</span>
+                        <span class="feature-tag">Depthwise Separable</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Our System</h2>
+                <p class="section-subtitle">Advanced features for reliable deepfake detection</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>High Accuracy</h3>
+                    <p>Our ensemble approach achieves up to 95.2% accuracy in detecting manipulated media.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast Processing</h3>
+                    <p>Get results in under 3 seconds with our optimized AI models and efficient processing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Detailed Analysis</h3>
+                    <p>Receive confidence scores from each model and comprehensive analysis reports.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Easy to Use</h3>
+                    <p>Simple drag-and-drop interface makes deepfake detection accessible to everyone.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Privacy Protected</h3>
+                    <p>Your uploaded files are processed securely and not stored on our servers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>API Available</h3>
+                    <p>Integrate our detection capabilities into your own applications via RESTful API.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Detect Deepfakes?</h2>
+                <p>Upload your media now and get instant AI-powered analysis</p>
+                <a href="{{ url_for('upload_page') }}" class="btn btn-primary btn-large">
+                    <i class="fas fa-upload"></i>
+                    Start Analysis
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>DeepFake Shield</span>
+                    </div>
+                    <p>Advanced AI-powered system for detecting manipulated media content. Built for educational and research purposes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Technology Stack</h4>
+                    <ul>
+                        <li><i class="fab fa-python"></i> Python & TensorFlow</li>
+                        <li><i class="fas fa-brain"></i> Keras Deep Learning</li>
+                        <li><i class="fas fa-server"></i> Flask Web Framework</li>
+                        <li><i class="fas fa-eye"></i> OpenCV Computer Vision</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>AI Models</h4>
+                    <ul>
+                        <li><i class="fas fa-layer-group"></i> CNN (EfficientNet)</li>
+                        <li><i class="fas fa-stream"></i> LSTM Network</li>
+                        <li><i class="fas fa-network-wired"></i> Xception Model</li>
+                        <li><i class="fas fa-sitemap"></i> Ensemble Learning</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Project Info</h4>
+                    <ul>
+                        <li><i class="fas fa-graduation-cap"></i> MIT Study Project</li>
+                        <li><i class="fas fa-calendar"></i> Semester 5 ML Course</li>
+                        <li><i class="fas fa-user"></i> Pranav More</li>
+                        <li><i class="fas fa-code-branch"></i> Open Source</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DeepFake Detection System. Built for educational purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
